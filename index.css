@@ -1,42 +1,63 @@
-body {
-    border: 8px solid orange;
-    padding: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-a {
-    color: orange;
+.home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /*크기를 초과하면 설정*/
+
 }
 
-img {
-    width:  200px;
-    display: block;
-    margin: 0 auto;
+.home img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover ; /*비율을 유지하면서 크기를 조정*/
+    position: absolute;
+    top: 0; /*왼쪽 상단에 고정*/
+    left:0;
 }
 
-h1 {
+.hometext{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*정확히 중앙에 배치할 때 사용하는 트릭*/
+    color: white;
     text-align: center;
-    font-size: 60px;
-}
-
-h3 {
-    text-align: center;
-}
-
-legend {
     font-weight: bold;
+    border-radius: 10px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
 }
 
-button {
-    border: 1px solid black;
-    text-decoration:underline;
+.hometext h1{
+    font-size: 75px;
 }
 
-.button1{
-    background-color: orange;
+.social-links {
+    position: absolute;
+    bottom: 38px; /* 아래쪽 여백 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around; /* a 태그들을 균등 배치 */
+    gap: 60px; /* 버튼 사이 간격 */
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.social-links a:link{
     color: white;
+    text-decoration: none;
 }
 
-.button2{
-    background-color: gray;
+.social-links a:visited{
     color: white;
+    text-decoration: none;
 }
+
