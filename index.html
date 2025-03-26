@@ -39,6 +39,7 @@
                 </div>
                 <div class="favorite_content">
                     <div class="content-wrapper">
+                        <h2>FAVORITE</h2>
                         <div class="food">
                             <h3>FOOD</h3>
                             <h4>초밥</h4>
@@ -55,9 +56,12 @@
                 </div>
                 <div class="hobby_content">
                     <div class="hobby-wrapper">
-                        <h4>사진 찍기</h4>
-                        <h4>전시회, 박물관 가기</h4>
-                        <h4>홀로 당일치기 여행가기</h4>
+                        <h2>HOBBY</h2>
+                        <div class="hobby">
+                            <h4>사진 찍기</h4>
+                            <h4>전시회, 박물관 가기</h4>
+                            <h4>홀로 당일치기 여행가기</h4>
+                        </div>       
                     </div>       
                 </div>
                 <div class="music_content">
@@ -71,7 +75,6 @@
         </section> 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                // 각 섹션의 정보를 배열로 관리
                 const sections = [
                     { 
                         content: document.querySelector(".favorite_content"),
@@ -87,28 +90,27 @@
                     }
                 ];
         
-                // aboutContent 요소의 가로 길이
                 const aboutContent = document.querySelector(".about-content");
         
                 // 각 섹션에 대해 설정
                 sections.forEach(section => {
-                    // 섹션의 넓이를 aboutContent와 맞추기
+
                     section.content.style.width = aboutContent.offsetWidth + "px";
         
-                    // 클릭 시 해당 팝업을 토글
+
                     section.trigger.addEventListener("click", function () {
-                        // 다른 팝업이 열려있다면 닫고 현재 팝업만 토글
+
                         sections.forEach(item => {
                             if (item.content !== section.content) {
-                                item.content.classList.remove("active");  // 다른 팝업을 닫음
+                                item.content.classList.remove("active");  
                             }
                         });
         
-                        // 현재 선택된 팝업이 열려있는 상태이면 닫고, 닫혀있는 상태이면 열기
+                        
                         if (section.content.classList.contains("active")) {
-                            section.content.classList.remove("active");  // 현재 팝업 닫기
+                            section.content.classList.remove("active"); 
                         } else {
-                            section.content.classList.add("active");  // 현재 팝업 열기
+                            section.content.classList.add("active"); 
                         }
                     });
                 });
